@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandz Photoshoot - Dynamic Image Effects</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #e267f5, #f5e267);
+            background-size: 200% 200%;
+            animation: colorChange 10s ease infinite;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes colorChange {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1, h2, h3 {
+            color: rgb(58, 57, 4);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 250px;
+            height: 300px;
+            margin: 10px;
+            transition: transform 0.5s, filter 0.5s;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+            filter: grayscale(100%);
+        }
+
+        .img-compare {
+            position: relative;
+            width: 250px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .img-compare img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .5s;
+        }
+
+        .img-compare img:nth-child(2) {
+            clip-path: inset(0 50% 0 0);
+        }
+
+        .img-compare:hover img:nth-child(2) {
+            clip-path: inset(0 0 0 0);
+        }
+
+        table {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(158, 12, 132);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(120, 9, 100);
+        }
+    </style>
+</head>
+<body>
+    <h1>Brandz Photoshoot</h1>
+    <p style="font-size: 18px;">Capture Your Cherished Moments with us</p>
+    
+    <h2>Photoshoot Pre-Booking Form</h2>
+    <form action="booking_form.php" method="post">
+        <table>
+            <tr>
+                <td><label>Enter First Name</label></td>
+                <td><input type="text" name="first_name"></td>
+            </tr>
+            <tr>
+                <td><label>Enter Last Name</label></td>
+                <td><input type="text" name="last_name"></td>
+            </tr>
+            <tr>
+                <td><label>Gender</label></td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td><label>Enter Email</label></td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><label>Enter Function Type</label></td>
+                <td><input type="text" name="function_type"></td>
+            </tr>
+            <tr>
+                <td><label>Enter Phone Number</label></td>
+                <td><input type="tel" name="phone"></td>
+            </tr>
+            <tr>
+                <td><label>Function From Date</label></td>
+                <td><input type="date" name="date1"></td>
+            </tr>
+            <tr>
+                <td><label>Function To Date</label></td>
+                <td><input type="date" name="date2"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="save" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <h2 style="color:rgb(158, 12, 132)">Gallery</h2>
+    <div class="image-container">
+        <h3>Wedding Photoshoot</h3>
+        <img src="wedding.jpeg" alt="Wedding Photoshoot">
+        <img src="wedding1.jpeg" alt="Wedding Photoshoot 2">
+    </div>
+    <div class="image-container">
+        <h3>Pre-Wedding Photoshoot</h3>
+        <img src="pre.jpeg" alt="Pre-Wedding Photoshoot">
+        <img src="pre1.jpeg" alt="Pre-Wedding Photoshoot 2">
+    </div>
+    <div class="image-container">
+        <h3>Engagement Photoshoot</h3>
+        <img src="engage.jpeg" alt="Engagement Photoshoot">
+        <img src="engage1.jpeg" alt="Engagement Photoshoot 2">
+    </div>
+    <div class="image-container">
+        <h3>Birthday Photoshoot</h3>
+        <img src="Birthday.jpeg" alt="Birthday Photoshoot">
+        <img src="birthday1.jpeg" alt="Birthday Photoshoot 2">
+    </div>
+
+
+</body>
+</html>
